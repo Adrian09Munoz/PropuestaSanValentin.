@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ff9ff3; /* Fondo rosa brillante */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #f39c12; /* Color dorado brillante */
+            font-size: 48px;
+            margin-top: 100px;
+        }
+
+        p {
+            font-size: 24px;
+            color: #2980b9; /* Color turquesa */
+            margin-top: 20px;
+        }
+
+        /* Estilo para el corazón latente */
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c; /* Rojo vibrante */
+            transform: rotate(45deg);
+            margin: 50px auto;
+            display: none; /* Ocultar inicialmente */
+            animation: beat 1s infinite;
+        }
+
+        .heart::before, .heart::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #e74c3c; /* Rojo vibrante */
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+
+        /* Animación del latido del corazón */
+        @keyframes beat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Estilo para las opciones de respuesta */
+        .options {
+            margin-top: 50px;
+        }
+
+        .button {
+            background-color: #f39c12; /* Amarillo brillante */
+            color: white;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #f1c40f; /* Amarillo más intenso al pasar el mouse */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Propuesta de San Valentín -->
+    <h1>Este 14 de febrero es un dia especial, es nuestro segundo san valentin juntos, pero el primero oficial. ¿Te gustaría ser mi San Valentín flaca?</h1>
+    <p>Si dices "No", habrá problema, echeee! ❤️</p>
+
+    <!-- Opciones de respuesta -->
+    <div class="options">
+        <button class="button" id="yesButton">Sí</button>
+        <button class="button" id="noButton">No</button>
+    </div>
+
+    <!-- Corazón animado -->
+    <div class="heart" id="heart"></div>
+
+    <script>
+        // Función para mostrar el corazón cuando se elige "Sí"
+        document.getElementById('yesButton').addEventListener('click', function() {
+            document.getElementById('heart').style.display = 'block';  // Mostrar el corazón
+        });
+
+        // Función para manejar la opción "No" (puedes personalizar qué pasa aquí)
+        document.getElementById('noButton').addEventListener('click', function() {
+            alert('¡Apuntala! 😅');  // Solo un mensaje, puedes cambiarlo
+        });
+    </script>
+
+</body>
+</html>
